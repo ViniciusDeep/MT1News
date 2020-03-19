@@ -20,7 +20,7 @@ struct AppCoordinator: Coordinator {
     }
     
     func showListNews() {
-        window.rootViewController = ViewController()
+        window.rootViewController = UINavigationController(rootViewController: ListNewsView())
         window.makeKeyAndVisible()
     }
     

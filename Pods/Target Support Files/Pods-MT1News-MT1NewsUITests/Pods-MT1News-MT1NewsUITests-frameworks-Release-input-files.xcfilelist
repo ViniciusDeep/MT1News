@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-MT1News-MT1NewsUITests/Pods-MT1News-MT1NewsUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CBuilder/CBuilder.framework
+${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework

@@ -1,0 +1,6 @@
+framework module CBuilder {
+  umbrella header "CBuilder-umbrella.h"
+
+  export *
+  module * { export * }
+}
