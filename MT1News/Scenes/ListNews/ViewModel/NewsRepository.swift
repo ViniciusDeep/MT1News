@@ -14,7 +14,7 @@ protocol CreatableNewRepository {
 
 struct NewsRepository: CreatableNewRepository {
     func getArticles() -> Observable<ArticleList> {
-       let url = URL(string: "http://newsapi.org/v2/top-headlines?country=br&apiKey=389c77dcb89a4ab79050826b32eaab7a")
+       let url = URL(string: "http://newsapi.org/v2/top-headlines?country=us&apiKey=389c77dcb89a4ab79050826b32eaab7a")
        return Service<ArticleList>().get(url: url!)
     }
 }

@@ -16,11 +16,9 @@ class ListNewsContentView: UIView, ConfigurableView {
         let tableView = UITableView()
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.backgroundColor = .tableViewBackgroundColor
+        tableView.backgroundColor = UIColor(named: .tableViewBackgroundColor)
         tableView.register(cellType: ListNewsCell.self)
-        tableView.rowHeight = 250
-        
-        
+        tableView.rowHeight = 300
         tableView.separatorStyle = .none
         return tableView
     }()

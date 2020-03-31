@@ -16,12 +16,10 @@ struct ArticleListViewModel {
         
     let isLoading = BehaviorSubject<Bool>(value: true)
     
-    
     init(newsRepository: CreatableNewRepository) {
         self.newsRepository = newsRepository
         self.loadArticles()
     }
-    
     
     public func loadArticles() {
         _ = newsRepository.getArticles().subscribe(onNext: {articleList in

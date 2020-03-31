@@ -23,7 +23,6 @@
 		DE720FAB2423E9CA00439A0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE720FAA2423E9CA00439A0E /* Coordinator.swift */; };
 		DE720FAD2423E9F500439A0E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE720FAC2423E9F500439A0E /* AppCoordinator.swift */; };
 		DE720FAF2423EE3300439A0E /* ListNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE720FAE2423EE3300439A0E /* ListNewsView.swift */; };
-		DE720FB42423F18A00439A0E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE720FB32423F18A00439A0E /* UIColor+Extensions.swift */; };
 		DEB7218B2423F2AE0027552A /* ListNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7218A2423F2AE0027552A /* ListNewsCell.swift */; };
 		DEB7218E2423F2FB0027552A /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7218D2423F2FB0027552A /* ConfigurableView.swift */; };
 		DEB721952423F4400027552A /* LayoutAnchor+operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB721902423F4400027552A /* LayoutAnchor+operations.swift */; };
@@ -37,6 +36,8 @@
 		DEC9AA7E2433F96A00481057 /* GenerateResource.sh in Resources */ = {isa = PBXBuildFile; fileRef = DEC9AA7D2433F96A00481057 /* GenerateResource.sh */; };
 		DEC9AA812433FC3D00481057 /* StringGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA802433FC3D00481057 /* StringGen.swift */; };
 		DEC9AA832433FC7100481057 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA822433FC7100481057 /* Assets.swift */; };
+		DEC9AA852434031500481057 /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC9AA842434031500481057 /* Colors.json */; };
+		DEC9AA872434037E00481057 /* ColorsGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA862434037E00481057 /* ColorsGen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,6 @@
 		DE720FAA2423E9CA00439A0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE720FAC2423E9F500439A0E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DE720FAE2423EE3300439A0E /* ListNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsView.swift; sourceTree = "<group>"; };
-		DE720FB32423F18A00439A0E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		DEB7218A2423F2AE0027552A /* ListNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsCell.swift; sourceTree = "<group>"; };
 		DEB7218D2423F2FB0027552A /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		DEB721902423F4400027552A /* LayoutAnchor+operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LayoutAnchor+operations.swift"; path = "Pods/CBuilder/CBuilder/Source/LayoutAnchor+operations.swift"; sourceTree = SOURCE_ROOT; };
@@ -97,6 +97,8 @@
 		DEC9AA7D2433F96A00481057 /* GenerateResource.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GenerateResource.sh; sourceTree = "<group>"; };
 		DEC9AA802433FC3D00481057 /* StringGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringGen.swift; sourceTree = "<group>"; };
 		DEC9AA822433FC7100481057 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		DEC9AA842434031500481057 /* Colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
+		DEC9AA862434037E00481057 /* ColorsGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsGen.swift; sourceTree = "<group>"; };
 		F87701D17E22FD759EA58E67 /* Pods_MT1News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MT1News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD86984FF5E7585833C01395 /* Pods_MT1NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MT1NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -261,7 +263,6 @@
 		DE720FB22423F17900439A0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DE720FB32423F18A00439A0E /* UIColor+Extensions.swift */,
 				DE0526C72433BD2300E7BC03 /* URLRequest+Extension.swift */,
 				DEC9AA742433EAF400481057 /* UITableViewCellAnimatio+Extension.swift */,
 			);
@@ -291,11 +292,13 @@
 		DEC9AA772433F4B800481057 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEC9AA862434037E00481057 /* ColorsGen.swift */,
 				DEC9AA822433FC7100481057 /* Assets.swift */,
 				DEC9AA802433FC3D00481057 /* StringGen.swift */,
 				DE4CE57C2423E5BC007570D1 /* Assets.xcassets */,
 				DEC9AA782433F4E000481057 /* Localizable.strings */,
 				DEC9AA7D2433F96A00481057 /* GenerateResource.sh */,
+				DEC9AA842434031500481057 /* Colors.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC9AA7E2433F96A00481057 /* GenerateResource.sh in Resources */,
+				DEC9AA852434031500481057 /* Colors.json in Resources */,
 				DE4CE5802423E5BC007570D1 /* LaunchScreen.storyboard in Resources */,
 				DEC9AA792433F4E000481057 /* Localizable.strings in Resources */,
 				DE4CE57D2423E5BC007570D1 /* Assets.xcassets in Resources */,
@@ -576,7 +580,6 @@
 				DE0526CB2433BEC500E7BC03 /* ArticleListViewModel.swift in Sources */,
 				DEB721952423F4400027552A /* LayoutAnchor+operations.swift in Sources */,
 				DE720FAF2423EE3300439A0E /* ListNewsView.swift in Sources */,
-				DE720FB42423F18A00439A0E /* UIColor+Extensions.swift in Sources */,
 				DEC9AA752433EAF400481057 /* UITableViewCellAnimatio+Extension.swift in Sources */,
 				DE720FAB2423E9CA00439A0E /* Coordinator.swift in Sources */,
 				DE0526CD2433BF2300E7BC03 /* NewsRepository.swift in Sources */,
@@ -590,6 +593,7 @@
 				DE0526C82433BD2300E7BC03 /* URLRequest+Extension.swift in Sources */,
 				DE4CE5762423E5BA007570D1 /* SceneDelegate.swift in Sources */,
 				DEB721962423F4400027552A /* LayoutProxy.swift in Sources */,
+				DEC9AA872434037E00481057 /* ColorsGen.swift in Sources */,
 				DEB7218B2423F2AE0027552A /* ListNewsCell.swift in Sources */,
 				DEB721982423F4400027552A /* CBuilder.swift in Sources */,
 				DEC9AA812433FC3D00481057 /* StringGen.swift in Sources */,

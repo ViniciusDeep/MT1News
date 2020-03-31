@@ -50,27 +50,27 @@ class ListNewsCell: UITableViewCell, Reusable, ConfigurableView {
             make.leading.equal(to: self.leadingAnchor, offsetBy: 0)
             make.trailing.equal(to: self.trailingAnchor, offsetBy: 0)
             make.top.equal(to: self.topAnchor, offsetBy: 10)
-            make.bottom.equal(to: self.bottomAnchor, offsetBy: -60)
+            make.bottom.equal(to: self.bottomAnchor, offsetBy: -90)
         }
         
         tagLabel.cBuild { (make) in
             make.leading.equal(to: leadingAnchor, offsetBy: 10)
             make.top.equal(to: bannerImage.bottomAnchor, offsetBy: 10)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -5)
         }
         
         titleLabel.cBuild { (make) in
             make.leading.equal(to: tagLabel.leadingAnchor, offsetBy: 0)
-            make.trailing.equal(to: self.trailingAnchor, offsetBy: -10)
+            make.trailing.equal(to: self.trailingAnchor, offsetBy: -5)
             make.top.equal(to: tagLabel.bottomAnchor, offsetBy: 5)
-            make.bottom.equal(to: self.bottomAnchor, offsetBy: -10)
+
         }
     }
     
     public func setup(withArticle article: Article) {
         titleLabel.text = article.title
-        tagLabel.text = article.source.name.uppercased()
+        tagLabel.text = article.source.name
         guard let urlImage = URL(string: article.urlToImage) else {return}
         bannerImage.sd_setImage(with: urlImage)
-        
     }
 }
