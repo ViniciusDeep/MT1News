@@ -9,39 +9,34 @@
 import RxCocoa
 import RxSwift
 
-class ListNewsView: UITableViewController {
+class ListNewsView: UIViewController {
     
-    let listArticleViewModel = ArticleListViewModel(articleService: ArticleService())
+    private let contentView = ListNewsContentView()
+    
+    let listArticleViewModel = ArticleListViewModel(newsRepository: NewsRepository())
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        self.tableView.delegate = nil
-        self.tableView.dataSource = nil
         setupView()
-        setupTableView()
-        listArticleViewModel.loadArticles()
         bindUI()
     }
     
     fileprivate func setupView() {
+        navigationController?.navigationBar.backgroundColor = .white
         navigationItem.title = "MT1News"
         navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    fileprivate func setupTableView() {
-        tableView.backgroundColor = .tableViewBackgroundColor
-        tableView.register(cellType: ListNewsCell.self)
-        tableView.rowHeight = 250
-        tableView.separatorStyle = .none
+        view.backgroundColor = .white
+        view.addSubview(contentView)
+        contentView.cBuild(make: .fillSuperview)
     }
     
     fileprivate func bindUI() {
-        listArticleViewModel.articles.bind(to: tableView.rx.items(cellIdentifier: ListNewsCell.reuseIdentifier, cellType: ListNewsCell.self)) { (row, article, cell) in
+        listArticleViewModel.articles.bind(to: contentView.tableView.rx.items(cellIdentifier: ListNewsCell.reuseIdentifier, cellType: ListNewsCell.self)) { (row, article, cell) in
+            cell.animationToRight()
             cell.setup(withArticle: article)
         }.disposed(by: disposeBag)
+        
+       listArticleViewModel.isLoading.bind(to: contentView.rx.isAnimating).disposed(by: disposeBag)
     }
 }
-
-

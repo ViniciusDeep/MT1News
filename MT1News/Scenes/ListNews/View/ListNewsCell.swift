@@ -8,34 +8,28 @@
 
 import Reusable
 import CBuilder
+import SDWebImage
 
 class ListNewsCell: UITableViewCell, Reusable, ConfigurableView {
 
     let bannerImage = configure(UIImageView()) {
-        $0.image = UIImage(named: "placeHolder")
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
         $0.clipsToBounds = true
-       // $0.layer.cornerRadius = 8
     }
     
     let tagLabel = configure(UILabel()) {
-        $0.text = "CNN News"
         $0.font = UIFont(name: "Arial", size: 12)
         $0.textColor = .lightGray
         $0.numberOfLines = 0
-        $0.text = $0.text?.uppercased()
         $0.lineBreakMode = .byWordWrapping
     }
     
     let titleLabel = configure(UILabel()) {
-        $0.text = "Trump directs FDA to examine whether malaria drug can be used for coronavirus - CNBC, FDA to examine whether malaria drug can be used for coronavirus - CNBC"
         $0.font = .boldSystemFont(ofSize: 16)
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
     }
-    
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -68,14 +62,15 @@ class ListNewsCell: UITableViewCell, Reusable, ConfigurableView {
             make.leading.equal(to: tagLabel.leadingAnchor, offsetBy: 0)
             make.trailing.equal(to: self.trailingAnchor, offsetBy: -10)
             make.top.equal(to: tagLabel.bottomAnchor, offsetBy: 5)
-            make.bottom.equal(to: self.bottomAnchor, offsetBy: -5)
+            make.bottom.equal(to: self.bottomAnchor, offsetBy: -10)
         }
     }
     
     public func setup(withArticle article: Article) {
         titleLabel.text = article.title
-        tagLabel.text = article.source.name
+        tagLabel.text = article.source.name.uppercased()
+        guard let urlImage = URL(string: article.urlToImage) else {return}
+        bannerImage.sd_setImage(with: urlImage)
+        
     }
-    
-    
 }

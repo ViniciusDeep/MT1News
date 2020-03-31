@@ -10,15 +10,23 @@ import RxSwift
 
 struct ArticleListViewModel {
     
-    let articleService: CreatableArticleService
+    let newsRepository: CreatableNewRepository
     
     let articles = PublishSubject<[Article]>()
         
-    let articleListSubject = PublishSubject<ArticleList>()
+    let isLoading = BehaviorSubject<Bool>(value: true)
+    
+    
+    init(newsRepository: CreatableNewRepository) {
+        self.newsRepository = newsRepository
+        self.loadArticles()
+    }
+    
     
     public func loadArticles() {
-        _ = articleService.getArticles().subscribe(onNext: {articleList in
+        _ = newsRepository.getArticles().subscribe(onNext: {articleList in
             self.articles.onNext(articleList.articles)
+            self.isLoading.onNext(false)
         })
     }
 }

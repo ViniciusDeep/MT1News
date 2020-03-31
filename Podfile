@@ -7,12 +7,12 @@ target 'MT1News' do
 
   # Pods for MT1News
   pod 'Reusable'
-  pod 'SwiftLint'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'CBuilder'
-
-
+  pod 'SDWebImage', '~> 5.0'
+  pod "SkeletonView"
+  pod 'SwiftGen', '~> 6.0'
 
   target 'MT1NewsTests' do
     inherit! :search_paths

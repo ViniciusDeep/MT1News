@@ -11,14 +11,20 @@ PODS:
   - RxRelay (5.1.0):
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
-  - SwiftLint (0.39.1)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
+  - SkeletonView (1.8.7)
+  - SwiftGen (6.1.0)
 
 DEPENDENCIES:
   - CBuilder
   - Reusable
   - RxCocoa
   - RxSwift
-  - SwiftLint
+  - SDWebImage (~> 5.0)
+  - SkeletonView
+  - SwiftGen (~> 6.0)
 
 SPEC REPOS:
   trunk:
@@ -27,7 +33,9 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - SwiftLint
+    - SDWebImage
+    - SkeletonView
+    - SwiftGen
 
 SPEC CHECKSUMS:
   CBuilder: 8c92d09034b26d9006040f786a81ad890fe0f274
@@ -35,8 +43,10 @@ SPEC CHECKSUMS:
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
-  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
 
-PODFILE CHECKSUM: bb8931bbe8ec183dcbdaa9f6cd9c3ef8fae53606
+PODFILE CHECKSUM: 0d7920d69df8185425fe341cf57e252f681a9e74
 
 COCOAPODS: 1.9.1

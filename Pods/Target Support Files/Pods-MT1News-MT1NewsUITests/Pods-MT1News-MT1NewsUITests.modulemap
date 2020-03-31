@@ -1,6 +1,0 @@
-framework module Pods_MT1News_MT1NewsUITests {
-  umbrella header "Pods-MT1News-MT1NewsUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
