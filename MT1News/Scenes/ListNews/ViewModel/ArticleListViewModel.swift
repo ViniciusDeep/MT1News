@@ -22,7 +22,7 @@ struct ArticleListViewModel {
     }
     
     public func loadArticles() {
-        _ = newsRepository.getArticles().subscribe(onNext: {articleList in
+        _ = newsRepository.getArticles(for: .headline(country: "br")).subscribe(onNext: {articleList in
             self.articles.onNext(articleList.articles)
             self.isLoading.onNext(false)
         })

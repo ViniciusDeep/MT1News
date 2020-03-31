@@ -9,12 +9,35 @@
 import RxSwift
 
 protocol CreatableNewRepository {
-    func getArticles() -> Observable<ArticleList>
+    func getArticles(for routerRequest: ArticleRouteRequest) -> Observable<ArticleList>
 }
 
 struct NewsRepository: CreatableNewRepository {
-    func getArticles() -> Observable<ArticleList> {
-       let url = URL(string: "http://newsapi.org/v2/top-headlines?country=us&apiKey=389c77dcb89a4ab79050826b32eaab7a")
+    func getArticles(for routerRequest: ArticleRouteRequest) -> Observable<ArticleList> {
+        let url = URL(string: routerRequest.endPoint)
        return Service<ArticleList>().get(url: url!)
+    }
+}
+
+enum ArticleRouteRequest {
+    
+    case headline(country: String)
+    case search(query: String)
+    
+    fileprivate var baseURL: String {
+        return  "http://newsapi.org/v2/"
+    }
+    
+    fileprivate var apiToken: String {
+        return "389c77dcb89a4ab79050826b32eaab7a"
+    }
+    
+    var endPoint: String {
+        switch self {
+        case .headline(let country):
+            return "\(baseURL)top-headlines?country=\(country)&apiKey=\(apiToken)"
+        case .search(let query):
+        return "\(baseURL)everything?q=\(query)&apiKey=\(apiToken)"
+        }
     }
 }
