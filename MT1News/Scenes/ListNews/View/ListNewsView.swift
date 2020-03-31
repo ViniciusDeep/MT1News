@@ -24,7 +24,7 @@ class ListNewsView: UIViewController {
     
     fileprivate func setupView() {
         navigationController?.navigationBar.backgroundColor = .white
-        navigationItem.title = "MT1News"
+        navigationItem.title = L10n.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         view.addSubview(contentView)

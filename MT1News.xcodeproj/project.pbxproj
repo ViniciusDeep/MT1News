@@ -33,6 +33,10 @@
 		DEB721992423F4400027552A /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB721942423F4400027552A /* LayoutAnchor.swift */; };
 		DEC9AA732433D7F900481057 /* ListNewsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA722433D7F900481057 /* ListNewsContentView.swift */; };
 		DEC9AA752433EAF400481057 /* UITableViewCellAnimatio+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA742433EAF400481057 /* UITableViewCellAnimatio+Extension.swift */; };
+		DEC9AA792433F4E000481057 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEC9AA782433F4E000481057 /* Localizable.strings */; };
+		DEC9AA7E2433F96A00481057 /* GenerateResource.sh in Resources */ = {isa = PBXBuildFile; fileRef = DEC9AA7D2433F96A00481057 /* GenerateResource.sh */; };
+		DEC9AA812433FC3D00481057 /* StringGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA802433FC3D00481057 /* StringGen.swift */; };
+		DEC9AA832433FC7100481057 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9AA822433FC7100481057 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		DEB721942423F4400027552A /* LayoutAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutAnchor.swift; path = Pods/CBuilder/CBuilder/Source/LayoutAnchor.swift; sourceTree = SOURCE_ROOT; };
 		DEC9AA722433D7F900481057 /* ListNewsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsContentView.swift; sourceTree = "<group>"; };
 		DEC9AA742433EAF400481057 /* UITableViewCellAnimatio+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCellAnimatio+Extension.swift"; sourceTree = "<group>"; };
+		DEC9AA782433F4E000481057 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DEC9AA7D2433F96A00481057 /* GenerateResource.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GenerateResource.sh; sourceTree = "<group>"; };
+		DEC9AA802433FC3D00481057 /* StringGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringGen.swift; sourceTree = "<group>"; };
+		DEC9AA822433FC7100481057 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		F87701D17E22FD759EA58E67 /* Pods_MT1News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MT1News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD86984FF5E7585833C01395 /* Pods_MT1NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MT1NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,13 +191,13 @@
 		DE4CE5722423E5BA007570D1 /* MT1News */ = {
 			isa = PBXGroup;
 			children = (
+				DEC9AA772433F4B800481057 /* Resources */,
 				DEB7218F2423F4310027552A /* Plugins */,
 				DEB7218C2423F2E70027552A /* Protocols */,
 				DE720FB22423F17900439A0E /* Extensions */,
 				DE4CE5A62423E730007570D1 /* Settings */,
 				DE4CE5A52423E6F5007570D1 /* Scenes */,
 				DE4CE5A42423E68D007570D1 /* Coordinator */,
-				DE4CE57C2423E5BC007570D1 /* Assets.xcassets */,
 				DE4CE57E2423E5BC007570D1 /* LaunchScreen.storyboard */,
 				DE4CE5812423E5BC007570D1 /* Info.plist */,
 			);
@@ -280,6 +288,18 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
+		DEC9AA772433F4B800481057 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9AA822433FC7100481057 /* Assets.swift */,
+				DEC9AA802433FC3D00481057 /* StringGen.swift */,
+				DE4CE57C2423E5BC007570D1 /* Assets.xcassets */,
+				DEC9AA782433F4E000481057 /* Localizable.strings */,
+				DEC9AA7D2433F96A00481057 /* GenerateResource.sh */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		ECD56A9F3C877B685CBD4E51 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +325,7 @@
 				DE4CE56D2423E5BA007570D1 /* Frameworks */,
 				DE4CE56E2423E5BA007570D1 /* Resources */,
 				C07E5745166590E8767E07F1 /* [CP] Embed Pods Frameworks */,
+				DEC9AA7F2433FAAC00481057 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -402,7 +423,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC9AA7E2433F96A00481057 /* GenerateResource.sh in Resources */,
 				DE4CE5802423E5BC007570D1 /* LaunchScreen.storyboard in Resources */,
+				DEC9AA792433F4E000481057 /* Localizable.strings in Resources */,
 				DE4CE57D2423E5BC007570D1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +547,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MT1News/Pods-MT1News-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DEC9AA7F2433FAAC00481057 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"$SRCROOT/MT1News/Resources/generateResource.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -539,6 +580,7 @@
 				DEC9AA752433EAF400481057 /* UITableViewCellAnimatio+Extension.swift in Sources */,
 				DE720FAB2423E9CA00439A0E /* Coordinator.swift in Sources */,
 				DE0526CD2433BF2300E7BC03 /* NewsRepository.swift in Sources */,
+				DEC9AA832433FC7100481057 /* Assets.swift in Sources */,
 				DEC9AA732433D7F900481057 /* ListNewsContentView.swift in Sources */,
 				DE720FAD2423E9F500439A0E /* AppCoordinator.swift in Sources */,
 				DE4CE5742423E5BA007570D1 /* AppDelegate.swift in Sources */,
@@ -550,6 +592,7 @@
 				DEB721962423F4400027552A /* LayoutProxy.swift in Sources */,
 				DEB7218B2423F2AE0027552A /* ListNewsCell.swift in Sources */,
 				DEB721982423F4400027552A /* CBuilder.swift in Sources */,
+				DEC9AA812433FC3D00481057 /* StringGen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
