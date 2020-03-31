@@ -23,8 +23,6 @@ struct AppCoordinator: Coordinator {
         window.rootViewController = UINavigationController(rootViewController: ListNewsView())
         window.makeKeyAndVisible()
     }
-    
-    
 }
 
 

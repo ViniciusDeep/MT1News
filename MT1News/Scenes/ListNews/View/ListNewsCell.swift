@@ -70,8 +70,11 @@ class ListNewsCell: UITableViewCell, Reusable, ConfigurableView {
             make.top.equal(to: tagLabel.bottomAnchor, offsetBy: 5)
             make.bottom.equal(to: self.bottomAnchor, offsetBy: -5)
         }
-        
-        
+    }
+    
+    public func setup(withArticle article: Article) {
+        titleLabel.text = article.title
+        tagLabel.text = article.source.name
     }
     
     

@@ -6,15 +6,23 @@
 //  Copyright © 2020 Vinicius Mangueira Correia. All rights reserved.
 //
 
-import UIKit
+import RxCocoa
+import RxSwift
 
 class ListNewsView: UITableViewController {
+    
+    let listArticleViewModel = ArticleListViewModel(articleService: ArticleService())
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tableView.delegate = nil
+        self.tableView.dataSource = nil
         setupView()
         setupTableView()
+        listArticleViewModel.loadArticles()
+        bindUI()
     }
     
     fileprivate func setupView() {
@@ -28,14 +36,12 @@ class ListNewsView: UITableViewController {
         tableView.rowHeight = 250
         tableView.separatorStyle = .none
     }
+    
+    fileprivate func bindUI() {
+        listArticleViewModel.articles.bind(to: tableView.rx.items(cellIdentifier: ListNewsCell.reuseIdentifier, cellType: ListNewsCell.self)) { (row, article, cell) in
+            cell.setup(withArticle: article)
+        }.disposed(by: disposeBag)
+    }
 }
 
-extension ListNewsView {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ListNewsCell.self)
-        return cell
-    }
-}
+
