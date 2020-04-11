@@ -16,13 +16,9 @@ jobs:
       - name: Build and Text
         run: |
           pod install
-          cd Texstyle
           run: xcodebuild clean test -workspace 'MT1News.xcworkspace' -scheme 'MyScheme' -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
         env: 
          destination: ${{ matrix.destination }}
-      - name: Update Code Coverage
-        run: |
-          bash <(curl -s https://codecov.io/bash) -J 'Texstyle'
       - name: Update docs
         run: |
           gem install jazzy
